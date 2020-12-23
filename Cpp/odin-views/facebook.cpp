@@ -88,6 +88,8 @@ namespace {
                             cnx, reference, identity_id,
                             fostlib::coerce<fostlib::email_address>(
                                     user_detail["email"]));
+                } else {
+                    odin::create_user(cnx, identity_id);
                 }
                 if (user_detail.has_key("name")) {
                     const auto facebook_user_name =
